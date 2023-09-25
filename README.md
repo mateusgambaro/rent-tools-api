@@ -20,7 +20,7 @@ Abaixo está a documentação simplificada para uma API REST desenvolvida em Nod
 
 ### Response
 
- [
+     [
     {
         "id": 1,
         "title": "Furadeira",
@@ -34,7 +34,7 @@ Abaixo está a documentação simplificada para uma API REST desenvolvida em Nod
         "brand": "Makita"
     },
     ...
-]
+    ]
 
 
 ## Create a new Thing
