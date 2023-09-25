@@ -1,52 +1,41 @@
-# REST API example application
+# Documentação da API REST para AlluTools
 
-This is a bare-bones example of a Sinatra application providing a REST
-API to a DataMapper-backed model.
+Abaixo está a documentação simplificada para uma API REST desenvolvida em Node.js para o aplicativo AlluTools. As rotas são organizadas com base nas tabelas Products, User e Orders.
 
-The entire application is contained within the `app.rb` file.
+## Instale as dependências
 
-`config.ru` is a minimal Rack configuration for unicorn.
+    npm install
 
-`run-tests.sh` runs a simplistic test and generates the API
-documentation below.
+## Rode a api
 
-It uses `run-curl-tests.rb` which runs each command defined in
-`commands.yml`.
-
-## Install
-
-    bundle install
-
-## Run the app
-
-    unicorn -p 7000
-
-## Run the tests
-
-    ./run-tests.sh
+    npm run dev
 
 # REST API
 
-The REST API to the example app is described below.
-
-## Get list of Things
+## Produtos
 
 ### Request
 
-`GET /thing/`
-
-    curl -i -H 'Accept: application/json' http://localhost:7000/thing/
+`GET /products`
 
 ### Response
 
-    HTTP/1.1 200 OK
-    Date: Thu, 24 Feb 2011 12:36:30 GMT
-    Status: 200 OK
-    Connection: close
-    Content-Type: application/json
-    Content-Length: 2
+ [
+    {
+        "id": 1,
+        "title": "Furadeira",
+        "content": "Furadeira potente de 750W",
+        "image": "link-da-imagem",
+        "price": 150,
+        "volts": "110V",
+        "watts": "750W",
+        "usability": "Doméstico",
+        "condition": "Novo",
+        "brand": "Makita"
+    },
+    ...
+]
 
-    []
 
 ## Create a new Thing
 
