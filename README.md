@@ -6,9 +6,22 @@ Abaixo está a documentação simplificada para uma API REST desenvolvida em Nod
 
     npm install
 
+## Configuração do Ambiente
+
+Antes de iniciar a aplicação, é necessário configurar as variáveis de ambiente. Para isso:
+
+1. Crie um arquivo `.env` na raiz do projeto.
+2. Adicione as seguintes chaves com seus respectivos valores:
+
+        DB_HOST=<Seu Host>
+        DB_DATABASE=postgres
+        DB_USERNAME=<Seu Usuário>
+        DB_PASSWORD=<Sua Senha>
+
 ## Rode a API
 
     npm run dev
+    
 ## Tabelas:
 
 ### Products
@@ -36,18 +49,6 @@ Abaixo está a documentação simplificada para uma API REST desenvolvida em Nod
 
 - **userId** (INTEGER) - ID do usuário relacionado ao pedido.
 - **productId** (INTEGER) - ID do produto relacionado ao pedido.
-
-## Configuração do Ambiente
-
-Antes de iniciar a aplicação, é necessário configurar as variáveis de ambiente. Para isso:
-
-1. Crie um arquivo `.env` na raiz do projeto.
-2. Adicione as seguintes chaves com seus respectivos valores:
-
-DB_HOST=<Seu Host>
-DB_DATABASE=postgres
-DB_USERNAME=<Seu Usuário>
-DB_PASSWORD=<Sua Senha>
 
 ## Endpoints:
 
