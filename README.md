@@ -86,5 +86,79 @@ Adicionar um novo produto.
 #### Respostas
 - **201 Created** - Produto criado com sucesso.
 - **500 Internal Server Erro** -  Erro no servidor.
-  
+
+### Usuários
+
+#### **GET** `/users`
+
+Obter todos os usuários.
+
+#### Respostas
+- **200 OK** - Retorna uma lista de usuários.
+- **500 Internal Server Error** - Erro no servidor.
+
+#### **GET** `/users/:id`
+Obter detalhes de um usuário específico.
+
+#### Respostas
+- **200 OK** - Retorna detalhes do usuário.
+- **404 Not Found** - Usuário não encontrado.
+- **500 Internal Server Error** - Erro no servidor.
+
+#### **POST** `/users`
+Criar um novo usuário.
+
+- **Body**: 
+
+  ```json
+  {
+  "name": "Nome do Usuário",
+  "email": "email@email.com",
+  "password": "password",
+  "document": "123.456.789-00"
+  }
+
+#### Respostas
+- **201 Created** - Usuário criado com sucesso.
+- **409 Conflict** - Email já registrado.
+- **500 Internal Server Erro** -  Erro no servidor.
+
+### Pedidos
+
+#### **GET** `/orders/:userId`
+
+Buscar todos os pedidos de um usuário específico.
+
+#### Respostas
+- **200 OK** - Retorna uma lista de pedidos.
+- **404 Not Found** - Pedidos não encontrados para o usuário.
+- **500 Internal Server Error** - Erro no servidor.
+
+#### **GET** `/users/:id`
+Obter detalhes de um usuário específico.
+
+#### Respostas
+- **200 OK** - Retorna detalhes do usuário.
+- **404 Not Found** - Usuário não encontrado.
+- **500 Internal Server Error** - Erro no servidor.
+
+#### **POST** `/orders`
+Criar um novo pedido.
+
+- **Body**: 
+
+  ```json
+  {
+  "products": "[1,2,3]",
+  "userId": "idDoUsuario"
+  }
+
+#### Respostas
+- **201 Created** - Pedido criado com sucesso.
+- **400 Bad Request** - Não foi possível criar o pedido.
+- **500 Internal Server Erro** -  Erro no servidor.
+
+### Nota: 
+
+Todas as rotas (exceto a de login) requerem autenticação via token JWT. O token deve ser fornecido no cabeçalho da requisição como "Authorization". Além disso, a validação adequada do email e senha é necessária ao criar um novo usuário, conforme indicado pelos middlewares emailValidation e passwordValidation
   
