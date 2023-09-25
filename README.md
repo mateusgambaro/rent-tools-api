@@ -10,11 +10,55 @@ Abaixo está a documentação simplificada para uma API REST desenvolvida em Nod
 
     npm run dev
 
+    ## Tabelas:
+
+### Products
+
+- **id** (INTEGER) - ID do produto.
+- **title** (STRING) - Nome do produto.
+- **content** (STRING) - Descrição do produto.
+- **image** (STRING) - URL da imagem do produto.
+- **price** (INTEGER) - Preço do produto.
+- **volts** (STRING) - Voltagem.
+- **watts** (STRING) - Potência em Watts.
+- **usability** (STRING) - Utilidade.
+- **condition** (STRING) - Condição do produto.
+- **brand** (STRING) - Marca.
+
+### User
+
+- **id** (INTEGER) - ID do usuário.
+- **name** (STRING) - Nome do usuário.
+- **email** (STRING) - Email do usuário.
+- **password** (STRING) - Senha do usuário.
+- **document** (STRING) - Documento do usuário.
+
+### Orders
+
+- **userId** (INTEGER) - ID do usuário relacionado ao pedido.
+- **productId** (INTEGER) - ID do produto relacionado ao pedido.
+
+## Endpoints:
+
+### Autenticação
+
+#### **POST** `/login`
+
+Autentica um usuário.
+
+- **Body**: 
+
+  ```json
+  {
+    "email": "usuario@email.com",
+    "password": "senha"
+  }
+
 # REST API
 
 ## Produtos
 
-### Request
+### Buscar produtos
 
 `GET /products`
 
@@ -37,7 +81,7 @@ Abaixo está a documentação simplificada para uma API REST desenvolvida em Nod
     ]
 
 
-## Create a new Thing
+## Filtrar produto
 
 ### Request
 
