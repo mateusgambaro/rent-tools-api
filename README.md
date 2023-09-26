@@ -2,6 +2,8 @@
 
 Abaixo está a documentação simplificada para uma API REST desenvolvida em Node.js para o aplicativo AlluTools. As rotas são organizadas com base nas tabelas Products, User e Orders.
 
+<img src="./service_deploy_api.jpeg" alt="arch">
+
 ## Instale as dependências
 
     npm install
